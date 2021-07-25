@@ -17,9 +17,13 @@ const App = () => {
     });
 
     const setURL = () => {
-      videoJsOptions.sources.push({ src: input, type: 'application/x-mpegURL' });
-      setVideoJsOptions(videoJsOptions);
-      console.log("SET");
+      setVideoJsOptions({
+        autoplay: true,
+        controls: true,
+        responsive: true,
+        fluid: true,
+        sources: [{ src: input, type: 'application/x-mpegURL' }]
+      });
     };
 
     if (videoJsOptions.sources.length > 0) {
