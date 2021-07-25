@@ -6,21 +6,20 @@ import TextInput from './components/TextInput';
 import './App.css';
 
 const App = () => {
-  
   const innerDiv = () => {
     const [input, setInput] = useState('');
-
-    let videoJsOptions = {
+    const [videoJsOptions, setVideoJsOptions] = useState({
       autoplay: true,
       controls: true,
       responsive: true,
       fluid: true,
       sources: []
-    };
+    });
 
     const setURL = () => {
       videoJsOptions.sources.push({ src: input, type: 'application/x-mpegURL' });
-      alert();
+      setVideoJsOptions(videoJsOptions);
+      console.log("SET");
     };
 
     if (videoJsOptions.sources.length > 0) {
