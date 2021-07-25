@@ -26,6 +26,7 @@ const App = () => {
       return (
         <div>
           <VideoJS options={videoJsOptions} />
+          <p>URL: {input}</p>
         </div>
       );
     } else {
